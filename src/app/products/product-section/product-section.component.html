@@ -1,0 +1,37 @@
+<mymakanan-product-category></mymakanan-product-category>
+<div class="all-product-grid">
+  <div class="container">
+    <mymakanan-product-filter></mymakanan-product-filter>
+    <div class="product-list-view">
+      <div class="row">
+
+        <div class="col-lg-3 col-md-6" *ngFor="let product of productService.products; let i = index" [routerLink]="['/products/', productService.categoryParam, product.productTitle]">
+          <div class="product-item mb-30">
+            <a class="product-img">
+              <img [src] = "product.productImg" alt="">
+              <div class="product-absolute-options">
+                <span class="offer-badge-1">6% off</span>
+                <span class="like-icon" title="wishlist"></span>
+              </div>
+            </a>
+            <div class="product-text-dt">
+              <p>{{product.categoryTitle}}</p>
+              <h4>{{product.productTitle}}</h4>
+              <div class="product-price">{{product.productPrice}}</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12">
+          <div class="more-product-btn">
+            <button class="show-more-btn hover-btn" onclick="window.location.href = '#';">Show More</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+

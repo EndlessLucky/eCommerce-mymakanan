@@ -1,0 +1,27 @@
+<div class="main-banner-slider">
+    <div class="row">
+      <div class="col-md-12">
+        <owl-carousel [options]="options" [carouselClasses]="['owl-theme', 'row', 'sliding']">
+          <div class="item" *ngFor="let banner of productService.bannerList; let i = index">
+
+            <div class="offer-item">								
+              <div class="offer-item-img">
+                <div class="gambo-overlay"></div>
+                <img [src] = "banner.bannerImg" alt="">
+              </div>
+              <div class="offer-text-dt">
+                <div class="offer-top-text-banner">
+                  <p>6% Off</p>
+                  <div class="top-text-1">Buy More & Save More</div>
+                  <span>{{banner.bannerTitle}}</span>
+                </div>
+                <a href="#" class="Offer-shop-btn hover-btn">Shop Now</a>
+              </div>
+            </div>
+
+          </div>
+        </owl-carousel>
+      </div>
+    </div>  
+</div>
+

@@ -1,0 +1,24 @@
+<div class="form-dt">
+  <div class="form-inpts checout-address-step">
+    <form>
+      <div class="form-title"><h6>Sign In</h6></div>
+      <div class="form-group pos_rel">
+        <input id="phone[number]" name="phone" type="text" placeholder="Enter Phone Number" class="form-control lgn_input" required="">
+        <i class="uil uil-mobile-android-alt lgn_icon"></i>
+      </div>
+      <div class="form-group pos_rel">
+        <input id="password1" name="password1" type="password" placeholder="Enter Password" class="form-control lgn_input" required="">
+        <i class="uil uil-padlock lgn_icon"></i>
+      </div>
+      <button class="login-btn hover-btn" type="submit">Sign In Now</button>
+      <button class="login-btn hover-btn" style="margin-top: 10px" (click)="signInWithGoogle()"><i class="uil uil-google"></i>Sign in with Google</button>
+      <button class="login-btn hover-btn" style="margin-top: 10px" (click)="signInWithFB()"><i class="uil uil-facebook"></i>Sign in with Facebook</button>
+    </form>
+  </div>
+  <div class="password-forgor">
+    <a href="forgot_password.html">Forgot Password?</a>
+  </div>
+  <div class="signup-link">
+    <p>Don't have an account? - <a [routerLink]="['/auth', 'register']">Sign Up Now</a></p>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+<header class="header clearfix">
+  <div class="top-header-group">
+    <div class="top-header">
+      <div class="main_logo" id="logo">
+        <a routerLink=""><img src="assets/images/logo.svg" alt=""></a>
+      </div>
+      <div class="header_right">
+        <ul>
+          <li class="nav-item"><a class="nav-link new_item" [routerLink]="['/auth', 'login']">Login</a></li>
+          <li class="ui dropdown">
+            <a href="#" class="opts_account">
+              <img src="assets/images/avatar/img-21.jpg" alt="">
+              <span class="user__name">John Doe</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="sub-header-group">
+    <div class="sub-header">
+      <nav class="navbar navbar-expand-lg navbar-light py-3">
+        <div class="container-fluid">
+          <button class="navbar-toggler menu_toggle_btn" type="button" data-target="#navbarSupportedContent"><i class="uil uil-bars"></i></button>
+          <div class="collapse navbar-collapse d-flex flex-column flex-lg-row flex-xl-row justify-content-lg-end bg-dark1 p-3 p-lg-0 mt1-5 mt-lg-0 mobileMenu" id="navbarSupportedContent">
+            <ul class="navbar-nav main_nav align-self-stretch" *ngFor="let category of productService.categoryList; let i = index">
+              <li class="nav-item"><a class="nav-link" [routerLink]="['/products', category.categoryTitle]">{{category.categoryTitle}}</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class="catey__icon">
+        <a class="cate__btn" data-toggle="modal" data-target="#category_model" title="Categories"><i class="uil uil-apps"></i></a>
+      </div>
+      <div class="header_cart order-1">
+        <a class="cart__btn hover-btn pull-bs-canvas-left" title="Cart"><i class="uil uil-shopping-cart-alt"></i><span>Cart</span><ins>2</ins><i class="uil uil-angle-down"></i></a>
+      </div>
+    </div>
+  </div>
+</header>
