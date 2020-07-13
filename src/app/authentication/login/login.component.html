@@ -1,13 +1,13 @@
 <div class="form-dt">
   <div class="form-inpts checout-address-step">
-    <form>
+    <form [formGroup]="form" (ngSubmit)="login()">
       <div class="form-title"><h6>Sign In</h6></div>
       <div class="form-group pos_rel">
-        <input id="phone[number]" name="phone" type="text" placeholder="Enter Phone Number" class="form-control lgn_input" required="">
+        <input type="text" placeholder="Enter Phone Number" class="form-control lgn_input" formControlName="phone">
         <i class="uil uil-mobile-android-alt lgn_icon"></i>
       </div>
       <div class="form-group pos_rel">
-        <input id="password1" name="password1" type="password" placeholder="Enter Password" class="form-control lgn_input" required="">
+        <input type="password" placeholder="Enter Password" class="form-control lgn_input" formControlName="password">
         <i class="uil uil-padlock lgn_icon"></i>
       </div>
       <button class="login-btn hover-btn" type="submit">Sign In Now</button>
