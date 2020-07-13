@@ -41,11 +41,7 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSubmit(): void{
-    this.register().then(r => console.log(r));
-  }
-
-  private async register() {
+  async register() {
     try {
       this.isLoading = true;
       const payload = this.form.value;
@@ -54,10 +50,10 @@ export class RegisterComponent implements OnInit {
       }else{
         payload.personalId = this.form.value.passport;
       }
-
-      // this.authService.register(payload).toPromise();
+      const res = await this.authService.register(payload).toPromise();
+      alert('Registered successfully');
     } catch (e) {
-      console.log(e);
+      alert(e.error.message);
     } finally {
       this.isLoading = false;
     }
