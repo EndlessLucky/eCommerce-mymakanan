@@ -1,57 +1,57 @@
 <div class="form-dt">
   <div class="form-inpts checout-address-step">
-    <form (ngSubmit)="onSubmit(fm)" #fm="ngForm">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
       <div class="form-title"><h6>Sign Up</h6></div>
       <div class="form-group pos_rel">
         <p>Please select your role</p>
-        <select name="role" class="form-control" [(ngModel)]="selectedRole">
+        <select class="form-control" formControlName="role">
           <option *ngFor="let role of productService.roleList" [ngValue]="role.roleName">{{role.roleName}}</option>
         </select>
       </div>
       <div class="form-group pos_rel">
-        <input id="phonenumber" name="phonenumber" type="text" placeholder="Phone Number" class="form-control lgn_input" required="" ngModel>
+        <input type="text" placeholder="Phone Number" class="form-control lgn_input" formControlName="phone">
         <i class="uil uil-mobile-android-alt lgn_icon"></i>
       </div>
       <div class="form-group pos_rel">
-        <input id="password" name="password" type="password" placeholder="Password" class="form-control lgn_input" required="" ngModel>
+        <input type="password" placeholder="Password" class="form-control lgn_input" required="" formControlName="password">
         <i class="uil uil-padlock lgn_icon"></i>
       </div>
       <div class="form-group pos_rel">
         <p>Please select your nation</p>
-        <select name="nation" class="form-control" [(ngModel)]="selectedNation">
+        <select class="form-control" formControlName="nation">
           <option *ngFor="let nation of productService.nationList" [ngValue]="nation.nationName">{{nation.nationName}}</option>
         </select>
       </div>
-      <div class="form-group pos_rel" *ngIf="selectedNation === 'Malaysia'">
-        <input id="identify" name="identify" type="text" placeholder="Identification number" class="form-control lgn_input" required="" ngModel>
+      <div class="form-group pos_rel" *ngIf="this.form.value.nation === 'Malaysia'">
+        <input type="text" placeholder="Identification number" class="form-control lgn_input"  formControlName="identify">
         <i class="uil uil-lock lgn_icon"></i>
       </div>
-      <div class="form-group pos_rel" *ngIf="selectedNation === 'Foreigner'">
-        <input id="passport" name="passport" type="text" placeholder="Passport number" class="form-control lgn_input" required="" ngModel>
+      <div class="form-group pos_rel" *ngIf="this.form.value.nation === 'Foreigner'">
+        <input type="text" placeholder="Passport number" class="form-control lgn_input" formControlName="passport">
         <i class="uil uil-airplay lgn_icon"></i>
       </div>
       <div class="form-group pos_rel">
-        <input id="fullname" name="fullname" type="text" placeholder="Full name" class="form-control lgn_input" required="" ngModel>
+        <input type="text" placeholder="Full name" class="form-control lgn_input" formControlName="name">
         <i class="uil uil-user-circle lgn_icon"></i>
       </div>
       <div class="form-group pos_rel">
-        <input id="email" name="email" type="email" placeholder="Email Address" class="form-control lgn_input" required="" ngModel>
+        <input type="email" placeholder="Email Address" class="form-control lgn_input" formControlName="email">
         <i class="uil uil-envelope lgn_icon"></i>
       </div>
       <div class="form-group pos_rel">
-        <input id="address1" name="address1" type="text" placeholder="Address1" class="form-control lgn_input" required="" ngModel>
+        <input type="text" placeholder="Address1" class="form-control lgn_input" formControlName="address1">
         <i class="uil uil-home lgn_icon"></i>
       </div>
       <div class="form-group pos_rel">
-        <input id="address2" name="address2" type="text" placeholder="Address2" class="form-control lgn_input" required="" ngModel>
+        <input type="text" placeholder="Address2" class="form-control lgn_input" formControlName="address2">
         <i class="uil uil-home lgn_icon"></i>
       </div>
       <div class="form-group pos_rel">
-        <input id="area" name="area" type="text" placeholder="Area" class="form-control lgn_input" required="" ngModel>
+        <input type="text" placeholder="Area" class="form-control lgn_input" formControlName="area">
         <i class="uil uil-globe lgn_icon"></i>
       </div>
       <div class="form-group pos_rel">
-        <input id="state" name="state" type="text" placeholder="State" class="form-control lgn_input" required="" ngModel>
+        <input type="text" placeholder="State" class="form-control lgn_input" formControlName="state">
         <i class="uil uil-globe lgn_icon"></i>
       </div>
 
