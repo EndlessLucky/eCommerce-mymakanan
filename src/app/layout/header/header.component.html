@@ -10,7 +10,7 @@
           <li class="ui dropdown">
             <a href="#" class="opts_account">
               <img src="assets/images/avatar/img-21.jpg" alt="">
-              <span class="user__name">John Doe</span>
+              <span class="user__name" *ngIf="user$ | async as user">{{user.name}}</span>
             </a>
           </li>
         </ul>

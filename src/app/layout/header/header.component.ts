@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ProductService} from "../../core/service/product.service";
+import { AuthService } from '../../core/service/auth.service';
+import { User } from '../../core/models/auth';
 
 @Component({
   selector: 'mymakanan-header',
@@ -8,9 +10,12 @@ import {ProductService} from "../../core/service/product.service";
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(public productService: ProductService) { }
+  user$ = this.authService.user$;
+
+  constructor(public productService: ProductService, private authService: AuthService) { }
 
   ngOnInit(): void {
+    this.user$.subscribe(res => console.log(res));
   }
 
 }

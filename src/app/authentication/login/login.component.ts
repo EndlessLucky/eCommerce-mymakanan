@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthService } from 'angularx-social-login';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 import { AuthService } from '../../core/service/auth.service';
 
 @Component({
@@ -24,16 +25,19 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+
   }
 
   async login() {
     try {
       this.isLoading = true;
       const payload = this.form.value;
-      const res = await this.authService.login(payload).toPromise();
-      console.log(res);
+      await this.authService.login(payload).toPromise();
+      const token = await this.authService.decodeToken();
+      this.authService.navigateByUserRole(token.role);
+      alert(`You've successfully logged in.`)
     } catch (e) {
-      alert('Please input the correct phone number and password');
+      alert(`Invalid email or password. Please try again.`);
     } finally {
       this.isLoading = false;
     }

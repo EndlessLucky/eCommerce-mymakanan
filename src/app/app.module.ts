@@ -12,7 +12,9 @@ import { AppComponent } from './app.component';
 import { LayoutModule } from './layout/layout.module';
 import { HomeModule } from './home/home.module';
 import { environment } from '../environments/environment';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { LocalStorageModule } from 'angular-2-local-storage';
+import { AuthInterceptor } from './core/interceptors/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,11 @@ import { HttpClientModule } from '@angular/common/http';
     LayoutModule,
     HomeModule,
     SocialLoginModule,
-    HttpClientModule
+    HttpClientModule,
+    LocalStorageModule.forRoot({
+      prefix: environment.localStorage.prefix,
+      storageType: 'localStorage'
+    })
   ],
   providers: [
     {
@@ -40,7 +46,8 @@ import { HttpClientModule } from '@angular/common/http';
           },
         ],
       } as SocialAuthServiceConfig,
-    }
+    },
+    {provide: HTTP_INTERCEPTORS, multi: true, useClass: AuthInterceptor}
   ],
   bootstrap: [AppComponent]
 })
