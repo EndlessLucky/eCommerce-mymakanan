@@ -12,10 +12,17 @@ export class HeaderComponent implements OnInit {
 
   user$ = this.authService.user$;
 
-  constructor(public productService: ProductService, private authService: AuthService) { }
+  constructor(
+    public productService: ProductService,
+    private authService: AuthService
+  ) { }
 
   ngOnInit(): void {
     this.user$.subscribe(res => console.log(res));
+  }
+
+  logOut(): void{
+    this.authService.logout();
   }
 
 }

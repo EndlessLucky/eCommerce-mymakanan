@@ -6,7 +6,8 @@
       </div>
       <div class="header_right">
         <ul>
-          <li class="nav-item"><a class="nav-link new_item" [routerLink]="['/auth', 'login']">Login</a></li>
+          <li class="nav-item" *ngIf="user$ | async as user" (click)="logOut()"><a class="nav-link new_item">Log out</a></li>
+          <li class="nav-item" *ngelse><a class="nav-link new_item" [routerLink]="['/auth', 'login']">Login</a></li>
           <li class="ui dropdown">
             <a href="#" class="opts_account">
               <img src="assets/images/avatar/img-21.jpg" alt="">
