@@ -15,6 +15,8 @@ export class UserResolver implements Resolve<User> {
   ) { }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<User> | Promise<User> | User {
-    return this.authService.getAuth();
+    if(!this.authService.isSocial){
+      return this.authService.getAuth();
+    }
   }
 }

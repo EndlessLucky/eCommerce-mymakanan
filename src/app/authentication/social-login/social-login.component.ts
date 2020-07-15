@@ -71,6 +71,7 @@ export class SocialLoginComponent implements OnInit {
         this.payload.area = '';
         this.payload.state = '';
         this.authService.register(this.payload).toPromise();
+        this.authService.isSocial = true;
         this.authService.setAuth(this.payload);
         this.authService.navigateByUserRole(this.payload.role);
       });
