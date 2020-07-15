@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthService } from 'angularx-social-login';
+
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { AuthService } from '../../core/service/auth.service';
+import {ProductService} from "../../core/service/product.service";
 
 @Component({
   selector: 'mymakanan-login',
@@ -16,11 +17,16 @@ export class LoginComponent implements OnInit {
     password: ['', Validators.required]
   });
 
+  socialForm: FormGroup = this.fb.group({
+    role: ['Supplier', Validators.required],
+    nation: ['Malaysia', Validators.required],
+  });
+
   isLoading = false;
 
   constructor(
     private authService: AuthService,
-    private socialAuthService: SocialAuthService,
+    public productService: ProductService,
     private fb: FormBuilder
   ) { }
 
@@ -42,15 +48,4 @@ export class LoginComponent implements OnInit {
       this.isLoading = false;
     }
   }
-
-  signInWithGoogle(): void {
-    this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID).then((res) => {
-      console.log(res);
-    });
-  }
-
-  signInWithFB(): void {
-    this.socialAuthService.signIn(FacebookLoginProvider.PROVIDER_ID);
-  }
-
 }

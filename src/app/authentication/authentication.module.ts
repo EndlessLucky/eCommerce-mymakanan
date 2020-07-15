@@ -6,12 +6,14 @@ import { AuthenticationComponent } from './authentication.component';
 import { AuthenticationRoutingModule } from './authentication-routing.module';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { SocialLoginComponent } from './social-login/social-login.component';
 
 @NgModule({
   declarations: [
     AuthenticationComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    SocialLoginComponent
   ],
   imports: [
     CommonModule,
