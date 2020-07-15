@@ -16,19 +16,18 @@ export class CategoryComponent implements OnInit {
 
   ngOnInit(): void {
     this.options = {
+      margin: 20,
       dots: false,
-      responsive: {
-        0: { items: 1, margin: 2 },
-        100: { items: 2, margin: 2 },
-        200: { items: 3, margin: 2 },
-        300: { items: 4, margin: 2 },
-        400: { items: 5, margin: 2 },
-        500: { items: 6, margin: 2 },
-      },
-      autoplay: false,
-      loop: true,
-      autoplayTimeout: 3000,
+      navigation: true,
+      nav: true,
+      autoplay: true,
+      loop: false,
       lazyLoad: true,
+      responsive:{
+        0:{ items: 2 },
+        600:{ items: 3 },
+        1000:{ items: 5 }
+      }
     };
   }
 

@@ -6,7 +6,7 @@ import { UserResolver } from './core/resolvers/user.resolver';
 
 const routes: Routes = [
   {
-    // resolve: {user: UserResolver},
+    resolve: {user: UserResolver},
     path: '', loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
   },
   {

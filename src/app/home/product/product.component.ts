@@ -15,17 +15,18 @@ export class ProductComponent implements OnInit {
 
   ngOnInit(): void {
     this.options = {
+      margin: 20,
       dots: false,
-      responsive: {
-        0: { items: 1, margin: 5 },
-        100: { items: 2, margin: 5 },
-        200: { items: 3, margin: 5 },
-        300: { items: 4, margin: 5 },
-      },
-      autoplay: false,
+      navigation: true,
+      nav: true,
+      autoplay: true,
       loop: false,
-      autoplayTimeout: 3000,
       lazyLoad: true,
+      responsive:{
+        0:{ items: 1 },
+        600:{ items: 3 },
+        1000:{ items: 5 }
+      }
     };
   }
 

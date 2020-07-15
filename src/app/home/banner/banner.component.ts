@@ -15,18 +15,18 @@ export class BannerComponent implements OnInit{
 
   ngOnInit(): void {
     this.options = {
+      margin: 20,
       dots: false,
-      responsive: {
-        0: { items: 1, margin: 20 },
-        100: { items: 2, margin: 20 },
-        200: { items: 3, margin: 20 },
-        300: { items: 4, margin: 20 },
-        400: { items: 5, margin: 20 }
-      },
+      navigation: true,
+      nav: true,
       autoplay: true,
-      loop: true,
-      autoplayTimeout: 5000,
+      loop: false,
       lazyLoad: true,
+      responsive:{
+        0:{ items: 1 },
+        600:{ items: 3 },
+        1000:{ items: 5 }
+      }
     };
   }
 }

@@ -18,6 +18,7 @@ export class AuthService {
   isLoggedIn$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(this.isLoggedIn);
   user: User;
   user$: BehaviorSubject<User> = new BehaviorSubject<User>(this.user);
+  isSocial: boolean = false;
 
   set accessToken(value: string) {
     this.localStorage.set(environment.localStorage.accessToken, value);
