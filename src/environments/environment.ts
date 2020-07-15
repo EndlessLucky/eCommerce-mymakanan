@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   googleOAuthClientId: '620347630025-2ejc2657vjvlvdk2kuo0i734eai10i8a.apps.googleusercontent.com',
+  fbOAuthClientId: '561602290896109',
   api: 'http://localhost:3000',
   localStorage: {
     prefix: 'mymakanan',

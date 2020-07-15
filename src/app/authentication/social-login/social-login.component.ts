@@ -55,7 +55,28 @@ export class SocialLoginComponent implements OnInit {
     }
   }
 
-  signInWithFB(): void {
-    this.socialAuthService.signIn(FacebookLoginProvider.PROVIDER_ID);
+  async signInWithFB() {
+    try {
+      this.isLoading = true;
+      this.socialAuthService.signIn(FacebookLoginProvider.PROVIDER_ID).then((res) => {
+        this.payload = this.socialForm.value;
+        this.payload.phone = '';
+        this.payload.password = '';
+        this.payload.personalId = '';
+        this.payload.name= res.name;
+        this.payload.email = res.email;
+        this.payload.address1 = '';
+        this.payload.address2 = '';
+        this.payload.area = '';
+        this.payload.state = '';
+        this.authService.register(this.payload).toPromise();
+        this.authService.setAuth(this.payload);
+        this.authService.navigateByUserRole(this.payload.role);
+      });
+    } catch (e) {
+      alert(e.error.message);
+    } finally {
+      this.isLoading = false;
+    }
   }
 }

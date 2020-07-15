@@ -44,6 +44,12 @@ import { AuthInterceptor } from './core/interceptors/auth.interceptor';
               environment.googleOAuthClientId
             ),
           },
+          {
+            id: FacebookLoginProvider.PROVIDER_ID,
+            provider: new FacebookLoginProvider(
+              environment.fbOAuthClientId
+            ),
+          }
         ],
       } as SocialAuthServiceConfig,
     },
