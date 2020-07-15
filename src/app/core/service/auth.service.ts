@@ -67,6 +67,11 @@ export class AuthService {
     );
   }
 
+  setAuth(socialUser): void{
+    this.user = socialUser;
+    this.user$.next(this.user);
+  }
+
   async decodeToken(): Promise<DecodedToken> {
     try {
       const token = this.accessToken;
