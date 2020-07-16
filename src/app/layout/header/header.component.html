@@ -1,14 +1,34 @@
 <header class="header clearfix">
   <div class="top-header-group">
     <div class="top-header">
+      <div class="res_main_logo">
+        <a href="index.html"><img src="assets/images/logo1.png" width="45px" height="45px" alt=""></a>
+      </div>
       <div class="main_logo" id="logo">
         <a routerLink=""><img src="assets/images/logo1.png" alt="" width="80px" height="80px"></a>
         <a href="index.html"><img class="logo-inverse" src="assets/images/logo1.png" alt="" width="45px" height="45px"></a>
       </div>
+
       <div class="header_right">
         <ul>
-          <li class="nav-item" *ngIf="user$ | async as user" (click)="logOut()"><a class="nav-link new_item">Log out</a></li>
-          <li class="nav-item" *ngelse><a class="nav-link new_item" [routerLink]="['/auth', 'login']">Login</a></li>
+          <li>
+            <a href="#" class="offer-link"></a>
+          </li>
+          <li>
+            <a href="offers.html" class="offer-link"></a>
+          </li>
+          <li>
+            <a href="faq.html" class="offer-link"></a>
+          </li>
+          <li *ngIf="user$ | async as user" (click)="logOut()">
+            <a href="offers.html" class="offer-link"><i class="uil uil-user"></i>Log out</a>
+          </li>
+          <li *ngelse>
+            <a href="faq.html" class="offer-link"><i class="uil uil-question-circle" [routerLink]="['/auth', 'login']"></i>Log in</a>
+          </li>
+          <li>
+            <a href="" class="option_links" title="Wishlist"><i class='uil uil-heart icon_wishlist'></i><span class="noti_count1">3</span></a>
+          </li>
           <li class="ui dropdown">
             <a href="#" class="opts_account">
               <img src="assets/images/avatar/img-21.jpg" alt="">

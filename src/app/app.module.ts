@@ -6,6 +6,7 @@ import {
   FacebookLoginProvider,
   AmazonLoginProvider,
 } from 'angularx-social-login';
+import {ResponsiveModule} from "ngx-responsive";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,11 +17,13 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LocalStorageModule } from 'angular-2-local-storage';
 import { AuthInterceptor } from './core/interceptors/auth.interceptor';
 
+
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
+    ResponsiveModule.forRoot(),
     BrowserModule,
     AppRoutingModule,
     LayoutModule,

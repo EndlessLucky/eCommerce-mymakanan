@@ -30,6 +30,7 @@
     "jwt-decode": "^2.2.0",
     "moment": "^2.27.0",
     "ngx-owl-carousel": "^2.0.7",
+    "ngx-responsive": "^9.0.3",
     "ngx-swiper-wrapper": "^9.0.1",
     "rxjs": "~6.5.5",
     "swiper": "^6.0.0",
