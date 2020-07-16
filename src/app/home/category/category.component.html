@@ -10,34 +10,13 @@
     </div>
     <div class="col-md-12">
       <owl-carousel [options]="options" [carouselClasses]="['owl-theme', 'row', 'sliding']">
-        <!--First column-->
         <div class="item" [routerLink]="['/products', category.categoryTitle]" style="padding: 20px;" *ngFor="let category of productService.categoryList; let i = index">
-          <div class="mb-r">
-            <!--Card-->
-            <div class="card card-cascade wider">
-              <!--Card image-->
-              <a>
-                <div class="view overlay hm-white-slight">
-                  <img [src]="category.categoryImg" alt="" width="50px" height="88px" />
-                  <a>
-                    <div class="mask waves-effect waves-light" mdbRippleRadius></div>
-                  </a>
-                </div>
-              </a>
-              <!--/.Card image-->
-
-              <!--Card content-->
-              <div class="card-body text-center no-padding">
-                <!--Category & Title-->
-                <a href="" class="text-muted">
-                  <h5>{{ category.categoryTitle }}</h5>
-                </a>
-              </div>
-              <!--/.Card content-->
+          <a href="#" class="category-item">
+            <div class="cate-img">
+              <img [src]="category.categoryImg" alt="">
             </div>
-            <!--/.Card-->
-          </div>
-          <!--/First column-->
+            <h4>{{ category.categoryTitle }}</h4>
+          </a>
         </div>
       </owl-carousel>
     </div>
