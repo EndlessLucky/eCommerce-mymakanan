@@ -8,17 +8,67 @@
         <a routerLink=""><img src="assets/images/logo1.png" alt="" width="80px" height="80px"></a>
         <a href="index.html"><img class="logo-inverse" src="assets/images/logo1.png" alt="" width="45px" height="45px"></a>
       </div>
-
+      <div class="select_location">
+        <div class="ui inline dropdown loc-title">
+          <div class="text">
+            <i class="uil uil-location-point"></i>
+            Gurugram
+          </div>
+          <i class="uil uil-angle-down icon__14"></i>
+          <div class="menu dropdown_loc">
+            <div class="item channel_item">
+              <i class="uil uil-location-point"></i>
+              Gurugram
+            </div>
+            <div class="item channel_item">
+              <i class="uil uil-location-point"></i>
+              New Delhi
+            </div>
+            <div class="item channel_item">
+              <i class="uil uil-location-point"></i>
+              Bangaluru
+            </div>
+            <div class="item channel_item">
+              <i class="uil uil-location-point"></i>
+              Mumbai
+            </div>
+            <div class="item channel_item">
+              <i class="uil uil-location-point"></i>
+              Hyderabad
+            </div>
+            <div class="item channel_item">
+              <i class="uil uil-location-point"></i>
+              Kolkata
+            </div>
+            <div class="item channel_item">
+              <i class="uil uil-location-point"></i>
+              Ludhiana
+            </div>
+            <div class="item channel_item">
+              <i class="uil uil-location-point"></i>
+              Chandigrah
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="search120">
+        <div class="ui search">
+          <div class="ui left icon input swdh10">
+            <input class="prompt srch10" type="text" placeholder="Search for products..">
+            <i class='uil uil-search-alt icon icon1'></i>
+          </div>
+        </div>
+      </div>
       <div class="header_right">
         <ul>
           <li>
-            <a href="#" class="offer-link"></a>
+            <a href="#" class="offer-link"><i class="uil uil-phone-alt"></i>1800-000-000</a>
           </li>
           <li>
-            <a href="offers.html" class="offer-link"></a>
+            <a href="offers.html" class="offer-link"><i class="uil uil-gift"></i>Offers</a>
           </li>
           <li>
-            <a href="faq.html" class="offer-link"></a>
+            <a href="faq.html" class="offer-link"><i class="uil uil-question-circle"></i>Help</a>
           </li>
           <li *ngIf="user$ | async as user" (click)="logOut()">
             <a href="offers.html" class="offer-link"><i class="uil uil-user"></i>Log out</a>
@@ -41,6 +91,9 @@
   </div>
   <div class="sub-header-group">
     <div class="sub-header">
+      <div class="ui dropdown">
+        <a href="#" class="category_drop hover-btn" data-toggle="modal" data-target="#category_model" title="Categories"><i class="uil uil-apps"></i><span class="cate__icon">Select Category</span></a>
+      </div>
       <nav class="navbar navbar-expand-lg navbar-light py-3">
         <div class="container-fluid">
           <button class="navbar-toggler menu_toggle_btn" type="button" data-target="#navbarSupportedContent"><i class="uil uil-bars"></i></button>

@@ -1,0 +1,35 @@
+<div class="section145">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="main-title-tt">
+          <div class="main-title-left">
+            <span>For You</span>
+            <h2>Fresh Vegetables & Fruits</h2>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <owl-carousel [options]="options" [carouselClasses]="['owl-theme', 'row', 'sliding']">
+          <!--First column-->
+          <div class="item" style="padding: 20px;" *ngFor="let product of productService.productList; let i = index">
+            <div class="product-item">
+              <a class="product-img">
+                <img [src] = "product.productImg" alt="">
+                <div class="product-absolute-options">
+                  <span class="offer-badge-1">6% off</span>
+                  <span class="like-icon" title="wishlist"></span>
+                </div>
+              </a>
+              <div class="product-text-dt">
+                <p>{{product.categoryTitle}}</p>
+                <h4>{{product.productTitle}}</h4>
+                <div class="product-price">{{product.productPrice}}</div>
+              </div>
+            </div>
+          </div>
+        </owl-carousel>
+      </div>
+    </div>
+  </div>
+</div>
