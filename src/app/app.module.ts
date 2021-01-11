@@ -3,8 +3,7 @@ import { NgModule } from '@angular/core';
 import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
 import {
   GoogleLoginProvider,
-  FacebookLoginProvider,
-  AmazonLoginProvider,
+  FacebookLoginProvider
 } from 'angularx-social-login';
 import {ResponsiveModule} from "ngx-responsive";
 
