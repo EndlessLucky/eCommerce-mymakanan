@@ -5,7 +5,7 @@ import {
   GoogleLoginProvider,
   FacebookLoginProvider
 } from 'angularx-social-login';
-import {ResponsiveModule} from "ngx-responsive";
+import {ResponsiveModule} from 'ngx-responsive';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
