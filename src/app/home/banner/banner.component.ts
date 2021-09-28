@@ -22,10 +22,10 @@ export class BannerComponent implements OnInit{
       autoplay: true,
       loop: false,
       lazyLoad: true,
-      responsive:{
-        0:{ items: 1 },
-        600:{ items: 3 },
-        1000:{ items: 5 }
+      responsive: {
+        0: { items: 1 },
+        600: { items: 3 },
+        1000: { items: 5 }
       }
     };
   }

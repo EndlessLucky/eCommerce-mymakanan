@@ -16,9 +16,9 @@ import { DecodedToken, LoginResponse, User, UserRole } from '../models/auth';
 export class AuthService {
 
   isLoggedIn$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(this.isLoggedIn);
-  user: User;
+  user: User = null;
   user$: BehaviorSubject<User> = new BehaviorSubject<User>(this.user);
-  isSocial: boolean = false;
+  isSocial = false;
 
   set accessToken(value: string) {
     this.localStorage.set(environment.localStorage.accessToken, value);
@@ -38,7 +38,7 @@ export class AuthService {
     private localStorage: LocalStorageService,
   ) { }
 
-  register(body: any) {
+  register(body: any): any {
     const url = `${environment.api}/users`;
     return this.http.post(url, body);
   }
@@ -52,14 +52,14 @@ export class AuthService {
     );
   }
 
-  authenticateUser(token: string) {
+  authenticateUser(token: string): void {
     this.accessToken = token;
     this.isLoggedIn$.next(this.isLoggedIn);
     this.getAuth().toPromise();
   }
 
   getAuth(): Observable<User> {
-    const url= `${environment.api}/auth/profile`;
+    const url = `${environment.api}/auth/profile`;
     return this.http.get<User>(url).pipe(
       tap(res => {
         this.user = res;
@@ -82,7 +82,7 @@ export class AuthService {
     }
   }
 
-  async navigateByUserRole(role?: UserRole) {
+  async navigateByUserRole(role?: UserRole): Promise<void> {
     if (!role) {
       const token = await this.decodeToken();
       role = token.role;
@@ -94,7 +94,7 @@ export class AuthService {
     }
   }
 
-  logout() {
+  logout(): void {
     this.accessToken = null;
     this.isLoggedIn$.next(this.isLoggedIn);
     this.user = null;

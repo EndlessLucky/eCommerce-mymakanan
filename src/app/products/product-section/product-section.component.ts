@@ -1,8 +1,8 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {Subject} from "rxjs";
-import {ActivatedRoute} from "@angular/router";
-import {takeUntil} from "rxjs/operators";
-import {ProductService} from "../../core/service/product.service";
+import {Subject} from 'rxjs';
+import {ActivatedRoute} from '@angular/router';
+import {takeUntil} from 'rxjs/operators';
+import {ProductService} from '../../core/service/product.service';
 
 @Component({
   selector: 'mymakanan-product-section',
